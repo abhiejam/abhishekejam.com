@@ -3,8 +3,8 @@ I've built this website using [Jekyll](https://jekyllrb.com/) and it's hosted on
 Feel free to grab a copy of the source code and build your own portfolio site.
 
 The following softwares were used during development:
-1. Ruby (3.0.0)
-2. Gem (3.4.19)
+1. Ruby (3.1.0 or newer) - Previously was using 3.0.0
+2. Gem (3.4.19 or newer)
 3. GCC (9.4.0)
 4. Make (4.2.1)
 5. Jekyll (4.2.0)
@@ -19,5 +19,9 @@ After you've downloaded a copy of this site, you need to install Jekyll and it's
 
 Finally, if nothing breaks then you can run the site locally:  
 `bundle exec jekyll serve`
+
+### Note on Ruby Version
+Recent Jekyll versions require Ruby 3.1.0 or newer. If you encounter dependency errors, please ensure you have the correct Ruby version installed. You can check your Ruby version with:
+`ruby -v`
 
 Happy Coding!
