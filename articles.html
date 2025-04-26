@@ -4,8 +4,14 @@ title:  "Abhishek Ejam | Articles"
 permalink: /articles
 ---
 
+<section class="article-block dark-bg mt-150 mb-20">
+  <div class="container content-wrapper">
+    NOTE: I do not write articles here anymore. I've moved them on <a href="https://abhishekejam.substack.com/" target="_blank">Substack</a>.
+  </div>
+  
+</section>
 {% assign sorted_articles = site.articles | sort: 'date' | reverse  %}
-<section class="article-block dark-bg mtb-150">
+<section class="article-block dark-bg mb-150">
   {% for article in sorted_articles %}
   <a href="{{ article.url | relative_url }}">
       <div class="container">
