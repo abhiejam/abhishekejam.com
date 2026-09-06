@@ -27,7 +27,7 @@ export default function Home() {
               width={112}
               height={112}
               priority
-              className="h-28 w-28 rounded-full object-cover"
+              className="h-28 w-28 rounded-full object-cover object-[50%_60%]"
             />
             <h1 className="mt-3 text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-[56px] md:leading-[1.05]">
               {site.headline}
