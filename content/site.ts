@@ -3,7 +3,12 @@ const substackUrl = "https://abhishekejam.substack.com";
 export const site = {
   name: "Abhishek Ejam",
   headline: "Hey, I'm Abhishek.",
-  bio: "Software engineer and indie builder, based in Melbourne. I build small products and share what I learn along the way.",
+  bio: "Software engineer in Melbourne, Australia, building AI products at work and small software products as an indie builder. I share what I learn along the way.",
+  seo: {
+    title: "Abhishek Ejam | Software Engineer in Melbourne",
+    description:
+      "Abhishek Ejam is a software engineer in Melbourne, Australia, building AI products at work and indie software products. Explore projects and lessons learned.",
+  },
   url: "https://abhishekejam.com",
   profileImage: "/profile.png",
   links: {

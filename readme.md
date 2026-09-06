@@ -103,6 +103,47 @@ Use Substack's own reporting for confirmed subscriptions.
 Optional subscriber and product statistics are omitted until verified numbers
 are available.
 
+## Search visibility and traffic sources
+
+Search titles and descriptions live in `content/site.ts`; the visible bio reflects
+the same Melbourne software engineering and AI product work. The homepage renders
+`ProfilePage`/`Person` JSON-LD from `content/structured-data.ts`. The sitemap omits
+`lastModified` until a reliable content modification date is maintained. Vercel
+non-production builds include a `noindex` directive.
+
+GA4 already collects traffic attribution through the Google tag. In
+**Reports → Acquisition → Traffic acquisition**, select **Session source / medium**
+or **Session campaign**. Filter event counts to `subscribe_click` or
+`namesnap_click` to compare actions by acquisition source. The custom event's
+`source` parameter identifies the clicked element, not the acquisition source.
+See [Google's campaign reporting guide](https://support.google.com/analytics/answer/10917952).
+
+Use these URLs when sharing links to this site (do not add campaign tags to
+internal navigation):
+
+| Placement           | Sharing URL                                                                              |
+| ------------------- | ---------------------------------------------------------------------------------------- |
+| LinkedIn profile    | `https://abhishekejam.com/?utm_source=linkedin&utm_medium=social&utm_campaign=profile`   |
+| X profile           | `https://abhishekejam.com/?utm_source=x&utm_medium=social&utm_campaign=profile`          |
+| Substack newsletter | `https://abhishekejam.com/?utm_source=substack&utm_medium=email&utm_campaign=newsletter` |
+
+Referring sites, including AI assistants, can appear when they send a referrer or
+tagged link. Missing attribution can appear as direct traffic; it cannot reliably
+identify which assistant or app sent the visitor. Do not put emails or other
+personal data in campaign parameters.
+
+**Crawler visibility:** GA4 [automatically excludes known bots](https://support.google.com/analytics/answer/9888366)
+and does not expose the excluded counts. Many crawlers never execute the Google
+tag. Use [Vercel Firewall Observability](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features)
+to inspect request user agents and bot activity, subject to the project's plan
+and retention. User-agent strings alone are spoofable. No crawler-blocking rules
+or artificial GA page views are added by this site.
+
+After deployment, validate the URL in Google's Rich Results Test, verify the
+production domain in Search Console, submit `/sitemap.xml`, and inspect homepage
+indexing. Check an external tagged visit in GA4 and review source/medium after
+report processing. Account configuration and live attribution need dashboard access.
+
 ## License
 
 Licensed under [MIT](LICENSE).

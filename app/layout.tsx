@@ -12,8 +12,12 @@ const figtree = Figtree({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: site.name,
-  description: site.bio,
+  title: site.seo.title,
+  description: site.seo.description,
+  robots:
+    process.env.VERCEL_ENV && process.env.VERCEL_ENV !== "production"
+      ? { index: false, follow: false }
+      : { index: true, follow: true },
   alternates: {
     canonical: "/",
     types: {
@@ -26,13 +30,14 @@ export const metadata: Metadata = {
     type: "website",
     url: site.url,
     siteName: site.name,
-    title: site.name,
-    description: site.bio,
+    title: site.seo.title,
+    description: site.seo.description,
+    locale: "en_AU",
   },
   twitter: {
     card: "summary_large_image",
-    title: site.name,
-    description: site.bio,
+    title: site.seo.title,
+    description: site.seo.description,
     creator: "@abhishekejam",
   },
 };
