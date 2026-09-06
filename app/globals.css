@@ -12,8 +12,8 @@
   --color-badge: #efe9dc;
   --color-ink: #111111;
   --color-ink-2: #4a4740;
-  --color-muted: #8a857a;
-  --color-placeholder: #9a958a;
+  --color-muted: #706b61;
+  --color-placeholder: #706b61;
   --radius-card: 16px;
 }
 
@@ -26,6 +26,27 @@
   html {
     color-scheme: light;
     scroll-behavior: smooth;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html {
+      color-scheme: dark;
+      --color-cream: #181714;
+      --color-surface: #211f1b;
+      --color-border: #3d3931;
+      --color-border-strong: #625c50;
+      --color-badge: #343027;
+      --color-ink: #f7f3ea;
+      --color-ink-2: #d0c9bb;
+      --color-muted: #aaa294;
+      --color-placeholder: #aaa294;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 
   body {

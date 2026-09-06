@@ -73,6 +73,40 @@ image has its own colours in `app/opengraph-image.tsx`.
 The `design/` and `docs/` directories, when present locally, are ignored reference
 materials and are not part of the tracked application.
 
+## Analytics and Phase 2
+
+The root layout includes Vercel Web Analytics and Google Analytics, reusing the
+old site's GA4 property `G-T91ZN1PS7M`. Tracking is disabled during development
+and Vercel previews. Production builds outside Vercel also enable tracking.
+The site follows the system colour preference, with no theme toggle.
+
+Enable Web Analytics in the Vercel project dashboard before deploying.
+[Vercel custom events](https://vercel.com/docs/analytics/custom-events) require
+a supported plan. The same events are sent to Google Analytics:
+
+| Event             | Source                | Meaning                                      |
+| ----------------- | --------------------- | -------------------------------------------- |
+| `subscribe_click` | `newsletter_form`     | A valid email form was submitted to Substack |
+| `subscribe_click` | `newsletter_fallback` | The direct subscription link was clicked     |
+| `namesnap_click`  | `project_card`        | The NameSnap card was clicked                |
+
+Events contain only the source label, never the email input. Subscription events
+measure intent; completed subscriptions and double opt-in happen on Substack.
+The native form and links work even when JavaScript or analytics is blocked.
+
+After deployment, verify both events in Vercel and GA4 Realtime using a browser
+without tracking blockers. Record a baseline over the first seven full days:
+visitors, form submissions, fallback clicks, and NameSnap clicks. Compare each
+event count with visitors, noting that repeated clicks are not unique conversions.
+Use Substack's own reporting for confirmed subscriptions.
+
+Optional subscriber and product statistics are omitted until verified numbers
+are available.
+
+## License
+
+Licensed under [MIT](LICENSE).
+
 ## CI and deployment
 
 The [GitHub Actions workflow](.github/workflows/ci.yml) runs lint, type checking,

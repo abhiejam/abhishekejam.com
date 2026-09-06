@@ -3,7 +3,7 @@ const substackUrl = "https://abhishekejam.substack.com";
 export const site = {
   name: "Abhishek Ejam",
   headline: "Hey, I'm Abhishek.",
-  bio: "Indie builder from Melbourne. I ship small software products and share what I learn.",
+  bio: "Software engineer and indie builder, based in Melbourne. I build small products and share what I learn along the way.",
   url: "https://abhishekejam.com",
   profileImage: "/profile.png",
   links: {
@@ -21,7 +21,8 @@ export const site = {
   ],
   newsletter: {
     title: "Join the newsletter",
-    pitch: "Build notes, launches and lessons. A few times a month.",
+    pitch:
+      "Notes on building and launching small software products, with lessons from the work along the way.",
     cta: "Subscribe",
     note: "No spam. Unsubscribe anytime.",
     fallback: "Or subscribe on Substack",
