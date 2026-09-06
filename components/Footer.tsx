@@ -6,7 +6,12 @@ export function Footer() {
       <span>
         © {new Date().getFullYear()} {site.name}
       </span>
-      <a href={site.substackUrl} className="transition-colors hover:text-ink">
+      <a
+        href={site.substackUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-colors hover:text-ink"
+      >
         {site.footerLink}
       </a>
     </footer>

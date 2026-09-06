@@ -30,7 +30,7 @@ export function SubscribeForm() {
           required
           autoComplete="email"
           placeholder="Your email"
-          className="h-[50px] flex-1 rounded-[10px] border border-border-strong bg-white px-4 text-base outline-none focus-visible:border-ink"
+          className="h-[50px] min-h-[50px] rounded-[10px] border border-border-strong bg-white px-4 text-base outline-none focus-visible:border-ink sm:flex-1"
         />
         <button
           type="submit"
@@ -43,6 +43,8 @@ export function SubscribeForm() {
       <p className="text-sm text-muted">{newsletter.note}</p>
       <a
         href={site.subscribeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         className="text-sm text-muted underline underline-offset-4 transition-colors hover:text-ink"
       >
         {newsletter.fallback}
