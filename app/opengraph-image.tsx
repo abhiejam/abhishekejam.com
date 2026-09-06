@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = site.name;
+export const alt = site.seo.title;
 
 export default async function OpengraphImage() {
   return new ImageResponse(
@@ -31,7 +31,7 @@ export default async function OpengraphImage() {
           maxWidth: 900,
         }}
       >
-        {site.bio}
+        Software engineer in Melbourne. Building AI products and indie software.
       </div>
       <div style={{ marginTop: 48, fontSize: 30, color: "#8A857A" }}>
         abhishekejam.com

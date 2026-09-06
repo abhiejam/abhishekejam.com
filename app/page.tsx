@@ -7,6 +7,7 @@ import { SubscribeForm } from "@/components/SubscribeForm";
 import { comingSoonLabel, projects } from "@/content/projects";
 import { journey } from "@/content/journey";
 import { site } from "@/content/site";
+import { profileStructuredData } from "@/content/structured-data";
 
 export const dynamic = "force-static";
 
@@ -17,6 +18,15 @@ export default function Home() {
       className="mx-auto flex min-h-dvh w-full max-w-[1040px] flex-col px-6"
     >
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(profileStructuredData).replace(
+            /</g,
+            "\\u003c",
+          ),
+        }}
+      />
 
       <main>
         <section className="grid items-center gap-12 py-20 md:grid-cols-2 md:gap-20 md:py-32">
