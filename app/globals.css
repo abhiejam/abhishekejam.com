@@ -1,0 +1,38 @@
+@import "tailwindcss" source(none);
+
+@source "./";
+@source "../components";
+@source "../content";
+
+@theme {
+  --color-cream: #f7f3ea;
+  --color-surface: #fffdf8;
+  --color-border: #e3ddcf;
+  --color-border-strong: #d6cfbf;
+  --color-badge: #efe9dc;
+  --color-ink: #111111;
+  --color-ink-2: #4a4740;
+  --color-muted: #8a857a;
+  --color-placeholder: #9a958a;
+  --radius-card: 16px;
+}
+
+@theme inline {
+  --font-sans:
+    var(--font-figtree), -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-dvh bg-cream font-sans text-ink antialiased;
+  }
+
+  input::placeholder {
+    @apply text-placeholder;
+  }
+}

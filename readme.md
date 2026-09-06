@@ -1,27 +1,46 @@
-Hey everyone 👋,  
-I've built this website using [Jekyll](https://jekyllrb.com/) and it's hosted on [GitHub Pages](https://docs.github.com/en/pages). 
-Feel free to grab a copy of the source code and build your own portfolio site.
+# abhishekejam.com
 
-The following softwares were used during development:
-1. Ruby (3.1.0 or newer) - Previously was using 3.0.0
-2. Gem (3.4.19 or newer)
-3. GCC (9.4.0)
-4. Make (4.2.1)
-5. Jekyll (4.2.0)
+Personal site of Abhishek Ejam, built with [Next.js](https://nextjs.org) (App Router)
+and [Tailwind CSS](https://tailwindcss.com), deployed on [Vercel](https://vercel.com).
 
-Apart from above, I also used [RVM](https://rvm.io/) to manage ruby versions. Lastly, I built this site on [Ubuntu 20.04](https://ubuntu.com/).
+This replaces the previous Jekyll site, which remains in this repository's git
+history on `main`.
 
-Detailed installation guide to install the above requirements can be found on [Jekyll official site](https://jekyllrb.com/docs/installation/#requirements).
+## Requirements
 
-### Running the site
-After you've downloaded a copy of this site, you need to install Jekyll and it's dependencies:  
-`bundle install`
+- Node.js 24 (`nvm use` reads `.nvmrc`)
+- pnpm, pinned in `package.json`. If `pnpm` is not on your PATH, run
+  `corepack enable` once, or prefix commands with `corepack pnpm`.
 
-Finally, if nothing breaks then you can run the site locally:  
-`bundle exec jekyll serve`
+## Running locally
 
-### Note on Ruby Version
-Recent Jekyll versions require Ruby 3.1.0 or newer. If you encounter dependency errors, please ensure you have the correct Ruby version installed. You can check your Ruby version with:
-`ruby -v`
+```sh
+corepack enable
+pnpm install --frozen-lockfile
+pnpm dev
+```
 
-Happy Coding!
+Then open http://localhost:3000.
+
+## Scripts
+
+| Command             | Purpose                            |
+| ------------------- | ---------------------------------- |
+| `pnpm dev`          | Dev server with Turbopack          |
+| `pnpm build`        | Production build                   |
+| `pnpm start`        | Serve the production build         |
+| `pnpm lint`         | ESLint, warnings treated as errors |
+| `pnpm typecheck`    | `next typegen` then `tsc --noEmit` |
+| `pnpm format`       | Prettier write                     |
+| `pnpm format:check` | Prettier check                     |
+
+## Layout
+
+```
+app/         routes, metadata, OG image, sitemap, robots, global CSS
+components/  Nav, SocialLinks, SubscribeForm, ProjectCard, Footer
+content/     site.ts, projects.ts, journey.ts — all copy lives here
+public/      static assets
+```
+
+Copy and links are edited in `content/`, not in components.
