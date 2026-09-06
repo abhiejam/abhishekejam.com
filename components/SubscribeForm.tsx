@@ -1,4 +1,7 @@
+"use client";
+
 import { site } from "@/content/site";
+import { trackConversion } from "@/lib/analytics";
 
 export function SubscribeForm() {
   const { newsletter } = site;
@@ -14,6 +17,7 @@ export function SubscribeForm() {
       </p>
 
       <form
+        onSubmit={() => trackConversion("subscribe_click", "newsletter_form")}
         action={site.subscribeUrl}
         method="get"
         target="_blank"
@@ -30,7 +34,7 @@ export function SubscribeForm() {
           required
           autoComplete="email"
           placeholder="Your email"
-          className="h-[50px] min-h-[50px] rounded-[10px] border border-border-strong bg-white px-4 text-base outline-none focus-visible:border-ink sm:flex-1"
+          className="h-[50px] min-h-[50px] min-w-0 rounded-[10px] border border-border-strong bg-surface px-4 text-base outline-none focus-visible:border-ink sm:flex-1"
         />
         <button
           type="submit"
@@ -42,6 +46,9 @@ export function SubscribeForm() {
 
       <p className="text-sm text-muted">{newsletter.note}</p>
       <a
+        onClick={() =>
+          trackConversion("subscribe_click", "newsletter_fallback")
+        }
         href={site.subscribeUrl}
         target="_blank"
         rel="noopener noreferrer"

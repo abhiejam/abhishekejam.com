@@ -1,8 +1,8 @@
 export const journey: string[] = [
-  "First programming job paid 12k NPR (about $80 USD) a month. Barely enough to live on.",
-  "Moved to Australia for a Master's in IT.",
-  "Kitchen shifts in pubs and restaurants to get by. Covid hit in 2020 and I lost those too, so I delivered for Uber Eats.",
-  "Got back into tech after finishing my Master's.",
-  "A decade in software now. Lead engineer by 2025.",
-  "Building my own things is the part I never got tired of. Started my indie journey alongside my full-time job in 2026.",
+  "My first programming job in Nepal paid 12,000 NPR (USD $80) a month. It was a start, but barely enough to live on.",
+  "Moved to Australia for a Master's in IT and worked at pub and restaurant to support myself.",
+  "When Covid took those shifts away, I delivered for Uber Eats.",
+  "After graduating, I found my way back into tech.",
+  "After a decade in software, I became lead engineer in 2025. Building things is still my favourite part of the job.",
+  "Now I'm building my own products alongside full-time work, and sharing what I learn.",
 ];

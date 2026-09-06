@@ -1,8 +1,16 @@
+"use client";
+
 import type { Project } from "@/content/projects";
+import { trackConversion } from "@/lib/analytics";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <a
+      onClick={() => {
+        if (project.href === "https://namesnap.app") {
+          trackConversion("namesnap_click", "project_card");
+        }
+      }}
       href={project.href}
       target="_blank"
       rel="noopener noreferrer"
