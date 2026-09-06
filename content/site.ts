@@ -5,7 +5,7 @@ export const site = {
   headline: "Hey, I'm Abhishek.",
   bio: "Indie builder from Melbourne. I ship small software products and share what I learn.",
   url: "https://abhishekejam.com",
-  profileImage: "/profile.jpg",
+  profileImage: "/profile.png",
   links: {
     x: "https://x.com/abhishekejam",
     github: "https://github.com/abhiejam",
