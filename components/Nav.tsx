@@ -14,6 +14,8 @@ export function Nav() {
           <a
             key={item.label}
             href={item.href}
+            target={item.href.startsWith("#") ? undefined : "_blank"}
+            rel={item.href.startsWith("#") ? undefined : "noopener noreferrer"}
             className="transition-colors hover:text-ink-2"
           >
             {item.label}

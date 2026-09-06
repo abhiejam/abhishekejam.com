@@ -4,6 +4,8 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <a
       href={project.href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="flex flex-col gap-3 rounded-card border border-border bg-surface p-7 transition-colors hover:border-ink"
     >
       <div className="flex items-center justify-between gap-3">
