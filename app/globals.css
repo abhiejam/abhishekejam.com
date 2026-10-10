@@ -14,6 +14,9 @@
   --color-ink-2: #4a4740;
   --color-muted: #706b61;
   --color-placeholder: #706b61;
+  --color-airmic: #5146e5;
+  --color-on-airmic: #ffffff;
+  --color-error: #b42318;
   --radius-card: 16px;
 }
 
@@ -40,6 +43,9 @@
       --color-ink-2: #d0c9bb;
       --color-muted: #aaa294;
       --color-placeholder: #aaa294;
+      --color-airmic: #857eed;
+      --color-on-airmic: #1b1a22;
+      --color-error: #f97066;
     }
   }
 
