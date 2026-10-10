@@ -9,8 +9,12 @@ export const analyticsEnabled =
     process.env.NEXT_PUBLIC_VERCEL_ENV === "production");
 
 export function trackConversion(
-  event: "subscribe_click" | "namesnap_click",
-  source: "newsletter_form" | "newsletter_fallback" | "project_card",
+  event: "subscribe_click" | "namesnap_click" | "airmic_waitlist_join",
+  source:
+    | "newsletter_form"
+    | "newsletter_fallback"
+    | "project_card"
+    | "airmic_waitlist",
 ) {
   if (!analyticsEnabled) return;
 

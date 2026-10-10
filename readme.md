@@ -144,6 +144,20 @@ production domain in Search Console, submit `/sitemap.xml`, and inspect homepage
 indexing. Check an external tagged visit in GA4 and review source/medium after
 report processing. Account configuration and live attribution need dashboard access.
 
+## AirMic waitlist
+
+`/airmic` collects App Store waitlist emails in Neon Postgres through a Server
+Action (`app/airmic/actions.ts`). The schema is in `db/schema.sql`. Emails are
+private: there is no route that reads or counts them.
+
+- Env vars: `DATABASE_URL` and `WAITLIST_IP_SALT` (see `.env.example`). Production
+  uses the Neon `main` branch; previews and `.env.local` use a separate dev branch.
+- `pnpm db:migrate` applies the schema to the database in `.env.local`.
+- `DATABASE_URL='<production url>' pnpm waitlist:export > waitlist.csv` exports the list.
+- Spam protection is a per-IP limit (5 attempts an hour, salted IP hashes) plus a honeypot.
+- `swift scripts/airmic-video.swift <source.mp4>` re-encodes the video
+  (720px wide, about 0.9 Mbps) and regenerates its poster frame.
+
 ## License
 
 Licensed under [MIT](LICENSE).

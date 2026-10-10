@@ -14,9 +14,12 @@
     "lint": "eslint . --max-warnings=0",
     "typecheck": "next typegen && tsc --noEmit",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "db:migrate": "node --env-file-if-exists=.env.local scripts/db-migrate.mjs",
+    "waitlist:export": "node --env-file-if-exists=.env.local scripts/export-waitlist.mjs"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
     "@next/third-parties": "^15.5.25",
     "@vercel/analytics": "^2.0.1",
     "next": "^15.5.24",
